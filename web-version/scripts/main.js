@@ -11,34 +11,13 @@ var JSONviews = null;
 
 var currentView = -1;
 
-function myshuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
-
 function loadImages()
 {
   currentView = floor(random(JSONviews.views.length));
 
   indexs = [0, 1, 2];
 
-  myshuffle(indexs);
-
-  console.log(indexs)
+  shuffle(indexs, true);
 
   for (let i = 0; i < 3; ++i) {
     //draggables[i].setPos(width * 0.01 + width / 3.1 * i + (10 * i), height * 0.22);
