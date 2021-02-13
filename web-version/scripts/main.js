@@ -5,21 +5,33 @@ var dragged = null;
 var offsetX;
 var offsetY;
 
+var backgroundImage;
+
+var JSONviews = null;
+
+var currentView = -1;
+
 function loadImages()
 {
-  test = ['images/image0-0.png']
+  currentView = floor(random(JSONviews.views.length));
+
+  console.log(currentView)
 
   for (let i = 0; i < 3; ++i) {
     //draggables[i].setPos(width * 0.01 + width / 3.1 * i + (10 * i), height * 0.22);
-    draggables[i].setImage(test[0]);
+    draggables[i].setImage(JSONviews.views[currentView][i].path);
   }
 }
 
 /* P5 */
-function precache() {}
+function preload() {
+  JSONviews = loadJSON('./views.json');
+
+  backgroundImage = loadImage('images/background.jpg');
+}
 
 function setup() {
-  canvas = createCanvas(windowWidth * 0.99, windowWidth * 0.99 * 9 / 16);
+  canvas = createCanvas(windowWidth, windowHeight);
 
   for (let i = 0; i < 3; ++i) {
     draggables[i] = new Draggable(createVector(width * 0.01 + width / 3.1 * i + (10 * i), height * 0.22), width / 3.1, width / 3.1 * 9 / 16);
@@ -28,6 +40,8 @@ function setup() {
 
 function draw() {
   background(220);
+
+  image(backgroundImage, 0, 0, width, height);
 
   if (dragged !== null)
     dragged.setPos(mouseX + offsetX, mouseY + offsetY);
@@ -52,7 +66,7 @@ function mousePressed()
 {
   if (dragged !== null)
     return;
-  for (let i = 0; i < 3; ++i) {
+  for (let i = 2; i >= 0; i--) {
     if (draggables[i].isMouseInteracting(mouseX, mouseY)) {
       dragged = draggables[i];
       offsetX = draggables[i].pos.x - mouseX;
