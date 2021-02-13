@@ -280,6 +280,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5039640852047406227}
     m_Modifications:
+    - target: {fileID: 3776834239296631913, guid: 721c7814119f4fc46a1f03161350b122, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8683882428084408576}
+    - target: {fileID: 5070928467580588301, guid: 721c7814119f4fc46a1f03161350b122, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8683882428084408576}
     - target: {fileID: 5119343722772942842, guid: 721c7814119f4fc46a1f03161350b122, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -346,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119343722772942842, guid: 721c7814119f4fc46a1f03161350b122, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -800
       objectReference: {fileID: 0}
     - target: {fileID: 5119343722772942842, guid: 721c7814119f4fc46a1f03161350b122, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -392,13 +400,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8683882428084408576}
     - target: {fileID: 3205537406208649280, guid: 461ccbe6415d75c4b8777377a8141555, type: 3}
-      propertyPath: id
-      value: MainMenuExit
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725905255834054625, guid: 461ccbe6415d75c4b8777377a8141555, type: 3}
-      propertyPath: m_LocalPosition.y
+      propertyPath: autoKill
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3205537406208649280, guid: 461ccbe6415d75c4b8777377a8141555, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8683882428084408576}
     - target: {fileID: 8594091917842589476, guid: 461ccbe6415d75c4b8777377a8141555, type: 3}
       propertyPath: m_Name
       value: MainMenu
@@ -488,7 +496,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8805393046654008096, guid: 461ccbe6415d75c4b8777377a8141555, type: 3}
-      propertyPath: id
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: MainMenuEnter
       objectReference: {fileID: 0}
     m_RemovedComponents: []

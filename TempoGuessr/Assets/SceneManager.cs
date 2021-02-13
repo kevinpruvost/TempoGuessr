@@ -14,13 +14,23 @@ public class SceneManager : MonoBehaviour
 
 
 
+    public void BeginSwitchToGame()
+    {
+        DOTween.Restart("MainMenuExit");
+    }
+
     public void SwitchToGame()
     {
-        DOTween.Play("MainMenuExit");
+        DOTween.Restart("GameEnter");
+    }
+
+    public void BeginSwitchToMainMenu()
+    {
+        DOTween.Restart("GameExit");
     }
 
     public void SwitchToMainMenu()
     {
-        DOTween.Play("MainMenuEnter");
+        DOTween.Restart("MainMenuEnter");
     }
 }
