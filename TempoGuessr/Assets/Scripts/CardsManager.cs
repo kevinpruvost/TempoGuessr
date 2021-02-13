@@ -21,9 +21,26 @@ public class CardsManager : Singleton<CardsManager>
         }
     }
 
+    private void Restart()
+    {
+        nums.Clear();
+        nums.Resize(cards.Count + 1, int.MaxValue);
+
+        foreach (var card in cards)
+        {
+            card.SetNum(int.MaxValue);
+        }
+    }
+
     void Update()
     {
         
+    }
+
+    public void PickNewSet()
+    {
+        Restart();
+        // TODO
     }
 
     public void Guess()
