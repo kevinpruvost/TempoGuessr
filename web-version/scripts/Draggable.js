@@ -40,7 +40,7 @@ class Draggable {
 
   draw() {
     noStroke();
-    fill(0, 0, 0, 40);
+    fill(0, 0, 0, 100);
     rect(this.pos.x, this.pos.y, this.width, this.height);
     if (!this.hasImage())
       return;
