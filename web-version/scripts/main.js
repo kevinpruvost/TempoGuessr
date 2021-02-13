@@ -60,7 +60,7 @@ function mousePressed()
 {
   if (dragged !== null)
     return;
-  for (let i = 0; i < 3; ++i) {
+  for (let i = 2; i >= 0; i--) {
     if (draggables[i].isMouseInteracting(mouseX, mouseY)) {
       dragged = draggables[i];
       offsetX = draggables[i].pos.x - mouseX;
