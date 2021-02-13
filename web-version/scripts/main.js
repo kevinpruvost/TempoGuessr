@@ -5,21 +5,29 @@ var dragged = null;
 var offsetX;
 var offsetY;
 
+var JSONviews = null;
+
+var currentView = -1;
+
 function loadImages()
 {
-  test = ['images/image0-0.png']
+  currentView = floor(random(JSONviews.views.length));
+
+  console.log(currentView)
 
   for (let i = 0; i < 3; ++i) {
     //draggables[i].setPos(width * 0.01 + width / 3.1 * i + (10 * i), height * 0.22);
-    draggables[i].setImage(test[0]);
+    draggables[i].setImage(JSONviews.views[currentView][i].path);
   }
 }
 
 /* P5 */
-function precache() {}
+function preload() {
+  JSONviews = loadJSON('./views.json');
+}
 
 function setup() {
-  canvas = createCanvas(windowWidth * 0.99, windowWidth * 0.99 * 9 / 16);
+  canvas = createCanvas(windowWidth, windowHeight);
 
   for (let i = 0; i < 3; ++i) {
     draggables[i] = new Draggable(createVector(width * 0.01 + width / 3.1 * i + (10 * i), height * 0.22), width / 3.1, width / 3.1 * 9 / 16);
