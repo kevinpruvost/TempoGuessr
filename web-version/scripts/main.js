@@ -5,6 +5,8 @@ var dragged = null;
 var offsetX;
 var offsetY;
 
+var backgroundImage;
+
 var JSONviews = null;
 
 var currentView = -1;
@@ -24,6 +26,8 @@ function loadImages()
 /* P5 */
 function preload() {
   JSONviews = loadJSON('./views.json');
+
+  backgroundImage = loadImage('images/background.jpg');
 }
 
 function setup() {
@@ -36,6 +40,8 @@ function setup() {
 
 function draw() {
   background(220);
+
+  image(backgroundImage, 0, 0, width, height);
 
   if (dragged !== null)
     dragged.setPos(mouseX + offsetX, mouseY + offsetY);
