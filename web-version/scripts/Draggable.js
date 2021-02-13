@@ -33,7 +33,15 @@ class Draggable {
     return this.image !== null;
   }
 
+  isMouseInteracting(mouseX, mouseY) {
+    return this.pos.x < mouseX && mouseX < this.pos.x + this.width
+      && this.pos.y < mouseY && mouseY < this.pos.y + this.height;
+  }
+
   draw() {
+    noStroke();
+    fill(0, 0, 0, 40);
+    rect(this.pos.x, this.pos.y, this.width, this.height);
     if (!this.hasImage())
       return;
     image(this.image, this.pos.x, this.pos.y, this.width, this.height);
