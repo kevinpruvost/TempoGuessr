@@ -40,7 +40,7 @@ function loadImages()
 
   for (let i = 0; i < 3; ++i) {
     //draggables[i].setPos(width * 0.01 + width / 3.1 * i + (10 * i), height * 0.22);
-    draggables[i].setImage('TempoGuessr/Assets/Resources/' + JSONviews.views[currentView].paths[indexs[i]]);
+    draggables[i].setImage('../TempoGuessr/Assets/Resources/' + JSONviews.views[currentView].paths[indexs[i]]);
     draggables[i].setDate(JSONviews.views[currentView].dates[indexs[i]]);
     draggables[i].setIndex(indexs[i]);
   }
@@ -90,9 +90,9 @@ function btnNextCallback()
 
 /* P5 */
 function preload() {
-  JSONviews = loadJSON('./TempoGuessr/Assets/Resources/views.json');
+  JSONviews = loadJSON('../TempoGuessr/Assets/Resources/views.json');
 
-  backgroundImage = loadImage('./web-version/images/background.jpg');
+  backgroundImage = loadImage('./images/background.jpg');
 }
 
 function setup() {
