@@ -4,6 +4,7 @@ var draggables = new Array(3);
 var dragged = null;
 var offsetX;
 var offsetY;
+var draggedOrigin;
 
 var backgroundImage;
 
@@ -36,7 +37,7 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
 
   for (let i = 0; i < 3; ++i) {
-    draggables[i] = new Draggable(createVector(width * 0.01 + width / 3.1 * i + (10 * i), height * 0.22), width / 3.1, width / 3.1 * 9 / 16);
+    draggables[i] = new Draggable(createVector(width * 0.025 + width / 3.2 * i + (10 * i), height * 0.28), width / 3.2, width / 3.2 * 9 / 16);
   }
 }
 
@@ -45,11 +46,13 @@ function draw() {
 
   image(backgroundImage, 0, 0, width, height);
 
-  if (dragged !== null)
-    dragged.setPos(mouseX + offsetX, mouseY + offsetY);
   draggables.forEach(draggable => {
     draggable.draw();  
   });
+  if (dragged !== null) {
+    dragged.setPos(mouseX + offsetX, mouseY + offsetY);
+    dragged.draw();
+  }
 }
 
 function keyReleased()
@@ -73,6 +76,8 @@ function mousePressed()
       dragged = draggables[i];
       offsetX = draggables[i].pos.x - mouseX;
       offsetY = draggables[i].pos.y - mouseY;
+      draggedOriginX = draggables[i].pos.x;
+      draggedOriginY = draggables[i].pos.y;
       break;
     }
   }
@@ -82,5 +87,14 @@ function mouseReleased()
 {
   if (dragged === null)
     return;
+  for (let i = 2; i >= 0; i--) {
+    if (draggables[i] != dragged && draggables[i].isMouseInteracting(mouseX, mouseY)) {
+      dragged.setPos(draggables[i].pos.x, draggables[i].pos.y);
+      dragged = null;
+      draggables[i].setPos(draggedOriginX, draggedOriginY);
+      return;
+    }
+  }
+  dragged.setPos(draggedOriginX, draggedOriginY);
   dragged = null;
 }
