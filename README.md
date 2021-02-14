@@ -24,11 +24,11 @@ In order to prepare them for time travels, these scientists had to teach them ho
 
 To do that, they called us, a bunch of weird devs, to make applications to teach them how to recognize environments and timelines based only on visual informations.
 
-We, then, made two applications, a web one and a mobile one.
+We, then, made two applications, a web one and a mobile/PC one.
 
 ## How to train your timeline recognition
 
-You can download the [Mobile Application (Android)](https://github.com/EpitechIT2020/G-JAM-001-NCY-0-1-jam-kevin.pruvost/blob/master/Builds/final.apk) or go on the [Web Application](https://baptistemartinet.github.io/TempoGuessr/).
+You can download the [Mobile Application (Android)](https://github.com/EpitechIT2020/G-JAM-001-NCY-0-1-jam-kevin.pruvost/blob/master/Builds/final.apk) or the [Windows version](https://github.com/EpitechIT2020/G-JAM-001-NCY-0-1-jam-kevin.pruvost/blob/master/Builds/TempoGuessr_Windows.rar) or go on the [Web Application](https://baptistemartinet.github.io/TempoGuessr/).
 
 The goal is pretty simple, you will have to pick images of the same location in the right order and guess in what timeline they are.
 The more you'll have right answers, the more you'll be able not to get lost in time travels.
