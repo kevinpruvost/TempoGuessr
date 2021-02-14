@@ -14,9 +14,9 @@
 
 ## Background Story & Description
 
-In a world where scientists are performing more and more tests on Time Travel. A group of scientists decided to try to educate
+In a world where scientists are performing more and more tests on Time Travelling technologies. A group of scientists decided to try to educate
 some monkeys to make them the test subjects of their experiences on Time Travelling technologies.
-In order to prepare them for time travels, these scientists had to teach them how to, at least, recognize their environement and the timeline they are located in.
+In order to prepare them for time travels, these scientists had to teach them how to, at least, recognize their environment and the timeline they are located in.
 
 <p align="center">
   <img src="https://github.com/EpitechIT2020/G-JAM-001-NCY-0-1-jam-kevin.pruvost/blob/master/Resources/lab_but_archi.jpg">
