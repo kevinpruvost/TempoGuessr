@@ -34,3 +34,13 @@ The goal is pretty simple, you will have to pick images of the same location in 
 The more you'll have right answers, the more you'll be able not to get lost in time travels.
 
 Good Luck !
+
+## Some Screenshots
+
+### Mobile Application
+
+<p align="center">
+  <img src="">
+</p>
+
+### Web Application
