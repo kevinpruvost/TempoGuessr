@@ -15,6 +15,13 @@
   <!-- <script src="./p5/p5.sound.min.js"></script> -->
 </head>
 <body>
+  <section id="HUD-section">
+    <button onclick="btnStartCallback()" id="btn-start">START</button>
+    <div id="HUD-container" style="display: none;">
+      <p id="HUD-container-text">Image 1/10</p>
+      <button id="HUD-container-next-button" onclick="btnNextCallback()">Next</button>
+    </div>
+  </section>
   <script src="./scripts/Draggable.js"></script>
   <script src="./scripts/main.js"></script>
 </body>

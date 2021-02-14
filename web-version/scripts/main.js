@@ -1,6 +1,13 @@
+/*
+#
+# HEADER
+#
+*/
+
 var canvas;
 
 var draggables = new Array(3);
+
 var dragged = null;
 var offsetX;
 var offsetY;
@@ -12,18 +19,34 @@ var JSONviews = null;
 
 var currentView = -1;
 
+var btnStart;
+var HUDContainer;
+var HUDText;
+
 function loadImages()
 {
   currentView = floor(random(JSONviews.views.length));
-
-  indexs = [0, 1, 2];
+  var indexs = [0, 1, 2];
 
   shuffle(indexs, true);
 
   for (let i = 0; i < 3; ++i) {
     //draggables[i].setPos(width * 0.01 + width / 3.1 * i + (10 * i), height * 0.22);
-    draggables[i].setImage(JSONviews.views[currentView][indexs[i]].path);
+    draggables[i].setImage(JSONviews.views[currentView].paths[indexs[i]]);
+    draggables[i].setDate(JSONviews.views[currentView].dates[indexs[i]]);
   }
+}
+
+function btnStartCallback()
+{
+  loadImages();
+  btnStart.style.display = 'none';
+  HUDContainer.style.display = 'block';
+}
+
+function btnNextCallback()
+{
+  loadImages();
 }
 
 /* P5 */
@@ -39,6 +62,10 @@ function setup() {
   for (let i = 0; i < 3; ++i) {
     draggables[i] = new Draggable(createVector(width * 0.025 + width / 3.2 * i + (10 * i), height * 0.28), width / 3.2, width / 3.2 * 9 / 16);
   }
+
+  btnStart = document.getElementById('btn-start');
+  HUDContainer = document.getElementById('HUD-container');
+  HUDText = document.getElementById('HUD-container-text');
 }
 
 function draw() {

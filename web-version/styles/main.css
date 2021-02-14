@@ -2,8 +2,50 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: monospace;
 }
 
 canvas {
-  user-select: none;
+  z-index: -1;
+}
+
+#HUD-section {
+  position: absolute;
+  width: 50%;
+  height: 30%;
+  left: 50%;
+  top: 70%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #68d87a;
+  border-radius: 4px;
+  color: #68d87a;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #68d87a;
+  color: white;
+}
+
+#HUD-container > p {
+  display: inline-block;
+  color: #68d87a;
+  font-size: 3em;
+  margin-right: 50px;
+}
+
+#HUD-container > button {
+  font-size: 30px;
 }

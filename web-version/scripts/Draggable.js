@@ -5,6 +5,7 @@ class Draggable {
     this.height = _height;
 
     this.image = null;
+    this.date = 'N/A';
   }
 
   setPos(x, y) {
@@ -31,6 +32,10 @@ class Draggable {
 
   hasImage() {
     return this.image !== null;
+  }
+
+  setDate(date) {
+    this.date = date;
   }
 
   isMouseInteracting(mouseX, mouseY) {
