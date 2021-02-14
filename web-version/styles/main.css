@@ -46,6 +46,7 @@ button:hover {
   color: #68d87a;
   font-size: 3em;
   margin-right: 50px;
+  font-weight: bold;
 }
 
 #HUD-container > button {

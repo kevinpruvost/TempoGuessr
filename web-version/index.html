@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="./images/favicon/favicon.ico" type="image/x-icon">
   <link rel="icon" href="./images/favicon/favicon.ico" type="image/x-icon">
   <!-- CSS -->
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <!-- JS -->
   <script src="./p5/p5.js"></script>
   <!-- <script src="./p5/p5.sound.min.js"></script> -->
@@ -18,8 +18,8 @@
   <section id="HUD-section">
     <button onclick="btnStartCallback()" id="btn-start">START</button>
     <div id="HUD-container" style="display: none;">
-      <p id="HUD-container-text">Image 1/10</p>
-      <button id="HUD-container-next-button" onclick="btnNextCallback()">Next</button>
+      <p>Image <span id="HUD-nb-image">1</span>/10 | Score <span id="HUD-score">0</span>/10</p>
+      <button id="HUD-container-next-button" onclick="btnNextCallback()">Check</button>
     </div>
   </section>
   <script src="./scripts/Draggable.js"></script>
