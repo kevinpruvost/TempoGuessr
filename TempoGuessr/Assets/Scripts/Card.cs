@@ -9,16 +9,27 @@ public class Card : MonoBehaviour
     [SerializeField] Image photo;
 
     private int numId = 0;
+    public int realNumId = 0;
 
     void Start()
     {
         SetNum(int.MaxValue);
     }
 
+    public bool isGuessCorrect()
+    {
+        return numId == realNumId;
+    }
+
+    public void SetPhoto(Sprite newSprite)
+    {
+        photo.sprite = newSprite;
+    }
+
     public void SetPhoto(Texture2D newImage)
     {
         Sprite sprite = Sprite.Create(newImage, new Rect(0.0f, 0.0f, newImage.width, newImage.height), new Vector2(0.5f, 0.5f));
-        photo.sprite = sprite;
+        SetPhoto(sprite);
     }
 
     public void ZoomOnCard()
@@ -33,6 +44,7 @@ public class Card : MonoBehaviour
 
     public void SetNum(int newNum)
     {
+        numId = newNum;
         if (newNum == int.MaxValue)
             num.text = "?";
         else

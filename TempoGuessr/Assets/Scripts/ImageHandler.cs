@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AlmostEngine;
 using SimpleJSON;
 
 public class Views
@@ -10,7 +11,7 @@ public class Views
     public string[] dates;
 }
 
-public class ImageHandler : MonoBehaviour
+public class ImageHandler : Singleton<ImageHandler>
 {
     private const string filepath = "/../../web-version/views.json";
     private Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();

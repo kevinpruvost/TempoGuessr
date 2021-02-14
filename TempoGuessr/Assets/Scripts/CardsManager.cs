@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,10 +39,19 @@ public class CardsManager : Singleton<CardsManager>
         
     }
 
+    public Views actualViews = null;
     public void PickNewSet()
     {
         Restart();
-        // TODO
+
+        actualViews = ImageHandler.m_Instance.GetView();
+        System.Random r = new System.Random();
+        var randomArray = Enumerable.Range(0, cards.Count).OrderBy(x => r.Next()).ToList();
+        for (int i = 0; i < cards.Count; ++i)
+        {
+            cards[i].SetPhoto(actualViews.images[randomArray[i]]);
+            cards[i].realNumId = randomArray[i] + 1;
+        }
     }
 
     public void Guess()
@@ -51,13 +62,21 @@ public class CardsManager : Singleton<CardsManager>
             return;
         }
 
-        // TODO
+        foreach (var card in cards)
+        {
+            if (!card.isGuessCorrect())
+            {
+                GuessScreen.m_Instance.TurnOn(false);
+                return;
+            }
+        }
+        GuessScreen.m_Instance.TurnOn(true);
     }
 
     private int actualIndex = 1;
     public void SetNumToCard(Card card)
     {
-        if (!nums.Contains(int.MaxValue))
+        if (!nums.Contains(int.MaxValue) || actualIndex > cards.Count)
         {
             for (int i = 0; i < nums.Count; ++i)
             {
@@ -70,9 +89,7 @@ public class CardsManager : Singleton<CardsManager>
         {
             if (card == cards[i])
             {
-                Debug.Log("Name : " + card.name);
                 if (nums[i] != int.MaxValue) return;
-                Debug.Log("Name : " + card.name);
 
                 card.SetNum(actualIndex);
                 nums[i] = actualIndex++;
