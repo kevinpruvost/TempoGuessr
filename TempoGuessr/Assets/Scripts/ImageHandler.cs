@@ -13,7 +13,7 @@ public class Views
 
 public class ImageHandler : Singleton<ImageHandler>
 {
-    private const string filepath = "/../../web-version/views.json";
+    private const string filepath = "views";
     private Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
     private Views[] views;
     
@@ -27,7 +27,8 @@ public class ImageHandler : Singleton<ImageHandler>
     // Start is called before the first frame update
     void Start()
     {
-        string text = System.IO.File.ReadAllText(Application.dataPath + filepath);
+        print(Resources.Load<TextAsset>(filepath));
+        string text = Resources.Load<TextAsset>(filepath).text;// System.IO.File.ReadAllText(Application.dataPath + filepath);
         JSONNode data = JSON.Parse(text)["views"];
         
         views = new Views[data.Count];
@@ -39,8 +40,7 @@ public class ImageHandler : Singleton<ImageHandler>
             views[i].location = data[i]["location"].Value;
             for (int j = 0; j != size; ++j) {
                 string path = data[i]["paths"][j].Value;
-                Texture2D t = new Texture2D(1,1);
-                t.LoadImage(System.IO.File.ReadAllBytes(path));
+                Texture2D t = (Texture2D)Resources.Load(path.Replace(".png", ""));
                 textures[path] = t;
                 views[i].images[j] = Sprite.Create(textures[path], new Rect(0, 0, t.width, t.height), new Vector2(0.5f, 0.5f));
                 views[i].dates[j] = data[i]["dates"][j].Value;
