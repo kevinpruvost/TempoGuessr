@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   overflow: hidden;
   font-family: monospace;
+  user-select: none;
 }
 
 canvas {
@@ -32,6 +33,7 @@ button {
   font-weight: bold;
   margin: 4px 2px;
   cursor: pointer;
+  outline: none;
 }
 
 button:hover {
