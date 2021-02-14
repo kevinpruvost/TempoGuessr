@@ -39,6 +39,11 @@ public class CardsManager : Singleton<CardsManager>
         
     }
 
+    public string getDateAtIndex(int index)
+    {
+        return actualViews.dates[cards[index].realNumId - 1];
+    }
+
     public Views actualViews = null;
     public void PickNewSet()
     {

@@ -22,9 +22,9 @@ public class GuessScreen : Singleton<GuessScreen>
 
         guessText.text = (guessIsRight) ? "Right guess !" : "Wrong guess !";
         complementText.text = "Timelines :\n\n" +
-            "1. " + CardsManager.m_Instance.actualViews.dates[0] + "\n" +
-            "2. " + CardsManager.m_Instance.actualViews.dates[1] + "\n" +
-            "3. " + CardsManager.m_Instance.actualViews.dates[2];
+            "1. " + CardsManager.m_Instance.getDateAtIndex(0) + "\n" +
+            "2. " + CardsManager.m_Instance.getDateAtIndex(1) + "\n" +
+            "3. " + CardsManager.m_Instance.getDateAtIndex(2);
         DOTween.Restart("GuessEnter");
         turnedOn = true;
     }
