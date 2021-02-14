@@ -273,6 +273,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5039640851390771644, guid: 70b6011b3575ef94ab6fd4a50ae059c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 482d45e0782c3f242ab36e8d0b5857b0, type: 3}
+    - target: {fileID: 5039640851390771644, guid: 70b6011b3575ef94ab6fd4a50ae059c5, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039640851390771644, guid: 70b6011b3575ef94ab6fd4a50ae059c5, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039640851390771644, guid: 70b6011b3575ef94ab6fd4a50ae059c5, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5039640852047406224, guid: 70b6011b3575ef94ab6fd4a50ae059c5, type: 3}
       propertyPath: m_Name
       value: Scenes
