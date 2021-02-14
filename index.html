@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TempoGuessr</title>
+  <!-- icon -->
+  <link rel="shortcut icon" href="./web-version/images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./web-version/images/favicon/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./web-version/styles/main.css">
+  <!-- JS -->
+  <script src="./web-version/p5/p5.js"></script>
+  <!-- <script src="./p5/p5.sound.min.js"></script> -->
+</head>
+<body>
+  <section id="HUD-section">
+    <button onclick="btnStartCallback()" id="btn-start">START</button>
+    <div id="HUD-container" style="display: none;">
+      <p>Image <span id="HUD-nb-image">1</span>/10 | Score <span id="HUD-score">0</span>/10</p>
+      <button id="HUD-container-next-button" onclick="btnNextCallback()">Check</button>
+    </div>
+  </section>
+  <script src="./web-version/scripts/Draggable.js"></script>
+  <script src="./web-version/scripts/main.js"></script>
+</body>
+</html>
