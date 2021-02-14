@@ -47,3 +47,9 @@ Good Luck !
 </p>
 
 ### Web Application
+
+<p align="center" display="align-block">
+  <img src="https://github.com/EpitechIT2020/G-JAM-001-NCY-0-1-jam-kevin.pruvost/blob/master/Screenshots/web_1.png" width=225>
+  <img src="https://github.com/EpitechIT2020/G-JAM-001-NCY-0-1-jam-kevin.pruvost/blob/master/Screenshots/web_2.png" width=225>
+  <img src="https://github.com/EpitechIT2020/G-JAM-001-NCY-0-1-jam-kevin.pruvost/blob/master/Screenshots/web_3.png" width=225>
+</p>
