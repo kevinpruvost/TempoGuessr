@@ -4,6 +4,8 @@
   <img src="https://github.com/kevinpruvost/TempoGuessr/blob/master/Resources/gorille.png">
 </p>
 
+(We had to make it in less than 24h)
+
 ## Group
 
 * Kévin Pruvost
